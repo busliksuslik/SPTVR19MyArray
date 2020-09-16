@@ -5,6 +5,7 @@
  */
 package sptvr19myarray;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -14,6 +15,7 @@ import java.util.Random;
 class App {
     private final Random rand = new Random();
     public void run(){
+        double sum = 0;
         int[]nums = new int[20];
         for (int i = 0;i< nums.length;i++){
             nums[i] = rand.nextInt();
@@ -21,6 +23,13 @@ class App {
         for (int i = 0; i< nums.length ; i++){
             System.out.println(nums[i]);
         }
+        Arrays.sort(nums);
+        nums[0] = 0;
+        nums[19] = 0;
+        for (int i = 0; i< nums.length ; i++){
+            sum +=nums[i];
+        }
+        System.out.printf("%f", sum/18);
     }
     
 }
